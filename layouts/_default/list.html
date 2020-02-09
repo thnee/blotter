@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="article-list">
+  {{ range where .Site.RegularPages "Section" "articles" }}
+    <article>
+      <h2><a href="{{ .RelPermalink }}"><span class="text">{{ .Title }}</span></a></h2>
+      <div class="meta">
+        <span class="date">{{ .Date.Format "2 Jan, 2006" }}</span>
+        <div class="tags">
+          {{ range .Params.Tags }}
+            <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <p class="summary">{{ .Summary|plainify|chomp }}</p>
+    </article>
+  {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,11 @@
+.img-link {
+  display: inline-block;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    background: $color-bg-light;
+    padding: 8px;
+  }
+}

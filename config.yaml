@@ -1,0 +1,33 @@
+baseURL: "https://thnee.se/"
+title: "thnee.se"
+
+pygmentsUseClasses: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    tabWidth: 4
+
+menu:
+  main:
+    - name: "articles"
+      url: "/"
+      weight: 1
+    - name: "about"
+      url: "/about/"
+      weight: 2
+
+taxonomies:
+  category: "categories"
+  tag: "tags"
+
+disableKinds: ["taxonomy", "taxonomyTerm"]

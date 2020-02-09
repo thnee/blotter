@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+    {{ hugo.Generator }}
+
+    {{ if eq hugo.Environment "production" }}
+      <meta name="robots" content="index, follow">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101286773-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-101286773-1');
+      </script>
+    {{ else }}
+      <meta name="robots" content="noindex, nofollow">
+    {{ end }}
+
+    <title>{{ .Params.Title }} | {{ .Site.Title }}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    {{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+  </head>
+
+  <body>
+    {{ partial "site-header.html" .}}
+
+    <main role="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </body>
+</html>

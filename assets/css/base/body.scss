@@ -1,0 +1,17 @@
+body {
+  background: $color-bg-normal;
+  color: $color-fg-normal;
+  font-family: "Montserrat";
+  overflow-y: scroll;
+}
+
+main {
+  @media screen and (min-width: 0px) and (max-width: 1200px) {
+    margin: 0 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+}

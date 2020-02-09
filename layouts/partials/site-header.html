@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="logo">
+    thnee<span class="dot">.</span>se
+  </div>
+  <nav>
+    <ul>
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>
