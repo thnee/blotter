@@ -2,7 +2,6 @@
 title: "Counters with PostgreSQL and Django"
 slug: "counters-postgresql-django"
 date: 2019-12-27 15:28:42 +0100
-draft: true
 tags:
   - "Software Engineering"
   - "PostgreSQL"
