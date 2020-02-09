@@ -21,7 +21,7 @@
       <meta name="robots" content="noindex, nofollow">
     {{ end }}
 
-    <title>{{ .Params.Title }} | {{ .Site.Title }}</title>
+    <title>{{ if .Params.Title }}{{ .Params.Title }} | {{ end }}{{ .Site.Title }}</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
