@@ -157,7 +157,7 @@ This chroot dir is populated with
 the minimum necessary files to satisfy an SFTP session.
 
 - `/data/home/username`  
-  A mount point for the homedir.  
+  A mount point for the home dir.  
   The home dir is where SFTP sessions normally start, and save files to.  
   Without it, SFTP sessions get rather confused about what directory the user is in.
 - `/etc/passwd` and `/etc/group`  
