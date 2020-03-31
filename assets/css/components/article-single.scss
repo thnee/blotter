@@ -28,5 +28,16 @@
 
   .content {
     line-height: 1.4em;
+
+    blockquote {
+      padding: 14px;
+      background-color: $color-bg-dark;
+      margin: 12px 0;
+      border-left: 2px solid $color-bg-light;
+
+      p {
+        margin: 0;
+      }
+    }
   }
 }
