@@ -14,3 +14,12 @@
 body::-webkit-scrollbar-thumb {
   background-color: $color-accent;
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $color-bg-light $color-bg-normal;
+}
+
+html {
+  scrollbar-color: $color-accent $color-bg-normal;
+}
