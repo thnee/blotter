@@ -1,6 +1,6 @@
 ---
+url: "postgresql-rotate-password"
 title: "PostgreSQL rotate password"
-slug: "postgresql-rotate-password"
 date: 2020-03-09 23:16:12 +0100
 tags:
   - "Software Engineering"

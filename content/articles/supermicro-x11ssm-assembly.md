@@ -1,6 +1,6 @@
 ---
+url: "supermicro-x11ssm-assembly"
 title: "SuperMicro X11SSM Assembly"
-slug: "supermicro-x11ssm-assembly"
 date: 2017-05-24 14:35:32 +0200
 tags:
   - "Hardware"

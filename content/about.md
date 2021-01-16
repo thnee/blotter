@@ -1,4 +1,5 @@
 ---
+url: "about"
 title: "Mattias Tomas Bobo Lindvall"
 date: 2020-01-19T16:53:29+01:00
 ---

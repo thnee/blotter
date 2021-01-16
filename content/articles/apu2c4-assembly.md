@@ -1,6 +1,6 @@
 ---
+url: "pcengines-apu2c4-assembly"
 title: "PC Engines APU2C4 Assembly"
-slug: "pcengines-apu2c4-assembly"
 date: 2016-06-05 23:23:30 +0200
 tags:
   - "Hardware"

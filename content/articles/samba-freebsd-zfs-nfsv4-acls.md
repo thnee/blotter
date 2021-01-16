@@ -1,6 +1,6 @@
 ---
+url: "samba-freebsd-zfs-nfsv4-acls"
 title: "Samba 4 on FreeBSD with ZFS and NFSv4 ACLs"
-slug: "samba-freebsd-zfs-nfsv4-acls"
 date: 2017-07-11 11:28:44 +0200
 tags:
   - "System Administration"

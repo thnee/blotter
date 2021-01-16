@@ -1,6 +1,6 @@
 ---
+url: "sftp-isolated-users"
 title: "SFTP server with isolated users"
-slug: "sftp-isolated-users"
 date: 2020-03-31 12:15:34 +0200
 tags:
   - "System Administration"

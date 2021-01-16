@@ -1,6 +1,6 @@
 ---
+url: "django-settings-package"
 title: "Django settings package"
-slug: "django-settings-package"
 date: 2017-08-19 10:47:22 +0200
 tags:
   - "Software Engineering"
