@@ -1,0 +1,76 @@
+.subnet-calculator {
+  .intro {
+    padding: 4px;
+    font-size: 11pt;
+
+    li {
+      margin-bottom: 3px;
+    }
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: auto;
+    row-gap: 10px;
+    font-size: 14px;
+    dt {
+      font-weight: bold;
+    }
+  }
+
+  .ip-input {
+    input {
+      font-family: monospace;
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 4px 6px;
+      background: $color-bg-dark;
+      color: $color-fg-light;
+    }
+
+    .buttons {
+      display: inline-block;
+      vertical-align: middle;
+
+      button {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 3px;
+        border: 1px solid black;
+        color: $color-fg-light;
+        background: $color-bg-light;
+        font-size: 12px;
+      }
+    }
+
+    .input-error {
+      color: red;
+    }
+
+    .input-warning {
+      color: orange;
+    }
+  }
+
+  .output {
+    font-family: monospace;
+    border-radius: 3px;
+    padding: 4px 6px;
+    background: $color-bg-dark;
+    color: $color-fg-light;
+  }
+
+  .base {
+    color: #ee88ee;
+  }
+
+  .net {
+    color: #8888ee;
+  }
+
+  .host {
+    color: #88ee88;
+  }
+}
+

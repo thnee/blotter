@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="article-list">
+  {{ range where .Site.RegularPages "Section" "tools" }}
+    <article>
+      <h2><a href="{{ .RelPermalink }}"><span class="text">{{ .Title }}</span></a></h2>
+      <p class="summary">{{ .Summary|plainify|chomp }}</p>
+    </article>
+  {{ end }}
+</section>
+{{ end }}

@@ -22,9 +22,12 @@ menu:
     - name: "articles"
       url: "/"
       weight: 1
+    - name: "tools"
+      url: "/tools/"
+      weight: 2
     - name: "about"
       url: "/about/"
-      weight: 2
+      weight: 3
 
 taxonomies:
   category: "categories"

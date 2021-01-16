@@ -23,6 +23,8 @@
 
     <title>{{ if .Params.Title }}{{ .Params.Title }} | {{ end }}{{ .Site.Title }}</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/zepto@1.2.0/dist/zepto.min.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     {{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
