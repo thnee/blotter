@@ -1,9 +1,10 @@
 ---
 url: "about"
-title: "Mattias Tomas Bobo Lindvall"
+title: "About"
 date: 2020-01-19T16:53:29+01:00
 ---
 
+Mattias Tomas Bobo Lindvall<br>
 Computer person<br>
 Stockholm, Sweden
 
