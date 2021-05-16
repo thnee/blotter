@@ -139,11 +139,21 @@ peer any environment with any other environment if the need arises.
 And if the network design is done correctly from the start,
 there is plenty of space to do so.
 
-It is typical in a cloud network
-to not separate individual projects / services into different subnets,
-but rather utilize firewall rules and network access control lists
-to control access between services.
-This is one of the main differences between cloud and traditional datacenters.
+A major difference between cloud networks and traditional datacenter networks is
+how the firewall is implemented. In a traditional datacenter,
+the firewall is typically a big central machine that all traffic flows through.
+But in a cloud network, there is no big central machine,
+instead firewall rules (and network access control lists)
+are applied directly on each individual machine instance.
+
+The implication of the firewall implementation is very important.
+With a central firewall, you basically have to have a separate subnet for every
+application / service, in order to ensure proper segmentation on the network layer.
+This inevitably leads to a lot of overlap, and a lot of subnets to keep track of,
+due to network space limitation.
+But with a cloud firewall,
+various applications / services can run the same VPC and subnet,
+and access control takes place on each individual machine instance.
 
 
 
