@@ -4,14 +4,14 @@
     <article>
       <h2><a href="{{ .RelPermalink }}"><span class="text">{{ .Title }}</span></a></h2>
       <div class="meta">
-        <span class="date">{{ .Date.Format "2 Jan, 2006" }}</span>
+        <span class="date">{{ .Date.Format "2006-01-02" }}</span>
         <div class="tags">
           {{ range .Params.Tags }}
             <span class="tag">{{ . }}</span>
           {{ end }}
         </div>
       </div>
-      <p class="summary">{{ .Summary|plainify|chomp }}</p>
+      <p class="summary">{{ htmlUnescape .Summary|plainify|chomp }}</p>
     </article>
   {{ end }}
 </section>
