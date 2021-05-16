@@ -122,26 +122,26 @@ It requires fundamental knowledge of the following kind of stuff.
 
 
 
-## Design goals
+## Design overview
 
-Generally, the goals we want to strive for is to:
-Pick a private network range with as much space as possible,
+- Pick a private network range with as much space as possible,
 so that would be the `10.0.0.0/8` range.
-And divide that range fairly evenly based on the organizational needs.
+- Divide that range fairly evenly based on the organizational needs.
+- Maintain a good level of symmetry in the design, so that it's easy to understand,
+  and easy to automate with tools like Terraform.
 
 We also want to avoid overlap as much as possible, in order to ensure interoperability.
 If you know that product / environment X never needs to talk to product / environment Y,
 then technically you could use the same VPC+subnet ranges in both.
-
 But it really is best to have a separate range for every VPC anyway,
-that way you know that you always have the ability to
+then you know that you always have the ability to
 peer any environment with any other environment if the need arises.
 And if the network design is done correctly from the start,
-there is plenty of space to do so.
+there is plenty of space to do so, unless your organization is absolutely gigantic.
 
 A major difference between cloud networks and traditional datacenter networks is
 how the firewall is implemented. In a traditional datacenter,
-the firewall is typically a big central machine that all traffic flows through.
+the firewall is typically a big central machine that all traffic goes through.
 But in a cloud network, there is no big central machine,
 instead firewall rules (and network access control lists)
 are applied directly on each individual machine instance.
@@ -149,11 +149,11 @@ are applied directly on each individual machine instance.
 The implication of the firewall implementation is very important.
 With a central firewall, you basically have to have a separate subnet for every
 application / service, in order to ensure proper segmentation on the network layer.
-This inevitably leads to a lot of overlap, and a lot of subnets to keep track of,
-due to network space limitation.
-But with a cloud firewall,
-various applications / services can run the same VPC and subnet,
-and access control takes place on each individual machine instance.
+This inevitably leads to a lot of overlap due to network space limitation,
+and a lot of subnets to keep track of.
+But with a cloud firewall the network access control
+takes place on each individual machine instance,
+which means that various applications / services can run the same VPC and subnet.
 
 
 
@@ -177,16 +177,16 @@ every organization may have its own special needs.
 
 AWS has some arbitrary limitations:
 
-- VPCs require a network range, not just Subnets.
-- You have to mask VPCs at `/16` or smaller.
-  (smaller network size meaning a larger netmask number, e.g. `/17` or `/20`).
+- It's not just Subnets that have a netmask, VPCs require them too.
+- VPCs must be sliced at `/16` or smaller.
+  (Smaller network size meaning a larger netmask, e.g. `/17` or `/20`).
 - Subnets are created per Availability Zone, not per Region.
 
 
 This means that we can't actually utilize a `/8` range completely freely,
 but that's ok because we really do want to allocate some space for multiple VPCs anyway.
 
-But it also means that you will end up wasting more space,
+But it also means that we will end up wasting more space,
 in order to maintain some sanity and symmetry.
 
 If our base network is sliced at `/8` and we create our VPCs sliced at `/16`,
@@ -255,13 +255,13 @@ When it comes to VPCs, you don't need to provide a netmask (a.k.a. CIDR range) a
 and you are free to utilize a `/8` base network to create subnets of any size.
 
 Furthermore subnets in GCP are a regional resource that spans across availability zones.
-Again, this is different from AWS where subnets are limited to an availability zone.
+Again, this is different from AWS where subnets are limited to one availability zone.
 
 So, while we still want to follow the same general design principles —
 and the base network of `/8` is still the same size —
-the additional freedom in GCP allows allows for wider margins and more elbow-room.
-Which means that we can make our subnets slightly larger
-(larger subnet size meaning a smaller netmask number).
+the additional freedom in GCP allows for wider margins and more elbow-room.
+Which means that we can make our subnets slightly larger.
+(Larger network size meaning a smaller netmask).
 
 So let's slice the subnets at `/20`.
 Then we have taken the 24 available bits and divided them exactly in half.
