@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		background: #171717;
+		color: white;
+		overflow-y: scroll;
+		font-family: "IBM Plex Sans";
+	}
+
+	code, pre {
+		font-family: "IBM Plex Mono";
+	}
+
+	ul {
+		@apply list-disc list-inside;
+	}
+
+	a {
+		@apply text-red-600;
+		&:hover {
+			@apply underline;
+		}
+	}
+
+	.article {
+		h1, h2, h3, h4, h5, h6, h7 {
+			@apply mb-1.5 mt-8 font-semibold;
+		}
+
+		h1 {
+			@apply text-5xl;
+		}
+		h2 {
+			@apply text-4xl
+		}
+		h3 {
+			@apply text-3xl;
+		}
+		h4 {
+			@apply text-2xl;
+		}
+		h5 {
+			@apply text-xl;
+		}
+
+		p, pre, ul, table, .note, .image {
+			@apply mb-4;
+		}
+		ul, ol {
+			@apply ml-4;
+		}
+		pre, code {
+			@apply bg-neutral-700/40;
+			> code {
+				@apply bg-transparent p-0 m-0;
+			}
+		}
+		code {
+			@apply py-0.5 px-1.5 rounded;
+		}
+		pre {
+			@apply p-4 rounded-md overflow-auto;
+		}
+
+		table {
+			@apply bg-neutral-800/25;
+			@apply border-separate border-spacing-0;
+			@apply border border-neutral-700/60 rounded-lg;
+			th, td {
+				@apply border-b border-neutral-700/60;
+				@apply p-2 px-3;
+			}
+			th {
+				@apply bg-neutral-800/75 text-left;
+			}
+		}
+	}
+}
+
+@layer components {
+	.badge {
+		@apply bg-neutral-700/40 py-[2px] px-[10px] rounded-md;
+	}
+
+	.note {
+		@apply p-3 px-4 rounded-md;
+
+		&-good {
+			@apply bg-green-500/50;
+		}
+
+		&-info {
+			@apply bg-sky-500/50;
+		}
+
+		&-warning {
+			@apply bg-orange-500/50;
+		}
+
+		&-danger {
+			@apply bg-red-500/50;
+		}
+	}
+}
