@@ -3,6 +3,8 @@
 	import "$lib/styles/main.css";
 	import "unfonts.css";
 
+	let { data } = $props();
+
 	let menu = {
 		"/": "Articles",
 		"/about": "About",
@@ -32,3 +34,16 @@
 
 	<slot />
 </div>
+
+<svelte:head>
+	{#if data.ENABLE_GA == "true"}
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XQTGB5VFR"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-3XQTGB5VFR');
+		</script>
+	{/if}
+</svelte:head>
