@@ -1,7 +1,10 @@
 <script>
 	import { page } from "$app/stores";
-	import "$lib/styles/main.css";
+
 	import "unfonts.css";
+	import "prismjs/themes/prism-tomorrow.css"
+
+	import "$lib/styles/main.css";
 
 	let { data } = $props();
 
