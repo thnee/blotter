@@ -7,17 +7,17 @@
 		<div class="flex flex-col items-center gap-2">
 			<a
 				class="text-2xl"
-				href={article.metadata.url}
+				href={article.url}
 			>
-				{article.metadata.title}
+				{article.title}
 			</a>
 
 			<div>
-				{article.metadata.date}
+				{article.date}
 			</div>
 
 			<div class="flex gap-2">
-				{#each article.metadata.tags as tag}
+				{#each article.tags as tag}
 					<div class="badge">
 						{tag}
 					</div>
