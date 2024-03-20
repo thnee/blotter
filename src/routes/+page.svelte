@@ -1,6 +1,12 @@
 <script>
+	import Seo from "$lib/Seo.svelte";
+
 	export let data;
 </script>
+
+<Seo
+	title="Tech blog"
+/>
 
 <div class="flex flex-col gap-10">
 	{#each data.articles as article}

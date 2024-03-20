@@ -1,6 +1,12 @@
 <script>
+	import Seo from "$lib/Seo.svelte";
+
 	let { title, date, tags } = $props();
 </script>
+
+<Seo
+	title={title}
+/>
 
 <div class="flex flex-col gap-4 mt-10">
 	<h1 class="text-4xl font-semibold">

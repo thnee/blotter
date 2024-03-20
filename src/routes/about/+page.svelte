@@ -1,4 +1,6 @@
 <script>
+	import Seo from "$lib/Seo.svelte";
+
 	let keywords = [
 		"Google Cloud Platform", "Amazon Web Services",
 		"Linux", "FreeBSD",
@@ -16,6 +18,10 @@
 		"Gaming", "Trading", "Biking", "Climbing",
 	];
 </script>
+
+<Seo
+	title="About"
+/>
 
 <div class="
 	mx-auto my-10
