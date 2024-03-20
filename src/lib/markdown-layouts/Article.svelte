@@ -7,16 +7,18 @@
 		{title}
 	</h1>
 
-	<div>
-		{date}
-	</div>
+	<div class="flex items-center gap-4">
+		<div>
+			{date}
+		</div>
 
-	<div class="flex gap-2">
-		{#each tags as tag}
-			<div class="badge">
-				{tag}
-			</div>
-		{/each}
+		<div class="flex gap-2">
+			{#each tags as tag}
+				<div class="badge">
+					{tag}
+				</div>
+			{/each}
+		</div>
 	</div>
 </div>
 
