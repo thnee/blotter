@@ -1,7 +1,7 @@
 ---
 url: "cloud-network-design"
 title: "Cloud network design"
-date: 2021-05-16
+date: "2021-05-16"
 tags:
   - "System Administration"
   - "Cloud Platforms"

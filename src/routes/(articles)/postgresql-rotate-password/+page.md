@@ -1,7 +1,7 @@
 ---
 url: "postgresql-rotate-password"
 title: "PostgreSQL rotate password"
-date: 2020-03-09 23:16:12 +0100
+date: "2020-03-09"
 tags:
   - "Software Engineering"
   - "PostgreSQL"

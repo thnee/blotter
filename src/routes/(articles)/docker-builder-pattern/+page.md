@@ -1,7 +1,7 @@
 ---
 url: "docker-builder-pattern"
 title: "Docker builder pattern"
-date: 2018-08-19 09:41:34 +0200
+date: "2018-08-19"
 tags:
   - "Software Engineering"
   - "Docker"

@@ -1,7 +1,7 @@
 ---
 url: "freebsd-iocage-primer"
 title: "FreeBSD Iocage Primer"
-date: 2017-06-20 12:19:52 +0200
+date: "2017-06-20"
 tags:
   - "System Administration"
   - "FreeBSD"

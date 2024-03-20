@@ -1,7 +1,7 @@
 ---
 url: "authentication-http-modern-frontend"
 title: "Authentication over HTTP in modern frontend apps"
-date: 2022-10-17 15:56:16 +0200
+date: "2022-10-17"
 tags:
   - "Software Engineering"
   - "Security"

@@ -1,7 +1,7 @@
 ---
 url: "supermicro-x11ssm-assembly"
 title: "SuperMicro X11SSM Assembly"
-date: 2017-05-24 14:35:32 +0200
+date: "2017-05-24"
 tags:
   - "Hardware"
   - "FreeBSD"

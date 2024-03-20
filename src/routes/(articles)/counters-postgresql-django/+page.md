@@ -1,7 +1,7 @@
 ---
 url: "counters-postgresql-django"
 title: "Counters with PostgreSQL and Django"
-date: 2019-12-27 15:28:42 +0100
+date: "2019-12-27"
 tags:
   - "Software Engineering"
   - "PostgreSQL"
