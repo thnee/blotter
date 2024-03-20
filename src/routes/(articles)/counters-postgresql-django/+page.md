@@ -262,7 +262,7 @@ Custom SQL can be added by manually adding a `RunSQL` operation to a migration.
 
 Let's add the following SQL in the `counting` app.
 
-```plpgsql
+```sql
 CREATE OR REPLACE FUNCTION counting_process_tasks(task_limit INT DEFAULT 1000)
 RETURNS void
 AS $$
@@ -337,7 +337,7 @@ This has several benefits.
 
 Let's add the following SQL in the `blog` app.
 
-```plpgsql
+```sql
 CREATE OR REPLACE FUNCTION blog_comment_update_counters()
 RETURNS trigger
 AS $$
