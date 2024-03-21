@@ -18,21 +18,27 @@
 	]}
 />
 
-<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-4">
 	{#each data.articles as article}
-		<div class="flex flex-col items-center gap-2 text-center">
+		<div class="
+			flex flex-col gap-2 pb-4
+			border-b border-red-700/50
+		">
 			<a
 				class="text-2xl"
 				href={article.url}
 			>
 				{article.title}
 			</a>
-
 			<div>
-				{article.date}
+				{article.description}
 			</div>
 
-			<div class="flex items-center flex-wrap gap-2 justify-center">
+			<div class="flex items-center flex-wrap gap-2">
+				<div>
+					{article.date}
+				</div>
+
 				{#each article.tags as tag}
 					<div class="badge">
 						{tag}
