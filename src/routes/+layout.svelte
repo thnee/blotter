@@ -1,7 +1,6 @@
 <script>
 	import { page } from "$app/stores";
 
-	import "unfonts.css";
 	import "prismjs/themes/prism-tomorrow.css"
 
 	import "$lib/styles/main.css";
@@ -39,6 +38,10 @@
 </div>
 
 <svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
 	{#if data.ENABLE_GA == "true"}
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XQTGB5VFR"></script>

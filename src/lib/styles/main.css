@@ -7,11 +7,11 @@
 		background: #171717;
 		color: white;
 		overflow-y: scroll;
-		font-family: "IBM Plex Sans";
+		font-family: "IBM Plex Sans", sans-serif;
 	}
 
 	code, pre {
-		font-family: "IBM Plex Mono";
+		font-family: "IBM Plex Mono", monospace !important;
 	}
 
 	ul {
