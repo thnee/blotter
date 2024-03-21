@@ -2,6 +2,8 @@
 url: "freebsd-iocage-primer"
 title: "FreeBSD Iocage Primer"
 date: "2017-06-20"
+description: >
+  Installing and using iocage to manage jails on FreeBSD.
 tags:
   - "System Administration"
   - "FreeBSD"

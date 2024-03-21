@@ -2,6 +2,8 @@
 url: "django-settings-package"
 title: "Django settings package"
 date: "2017-08-19"
+description: >
+  Overview of Django settings package with practical examples.
 tags:
   - "Software Engineering"
   - "Python"

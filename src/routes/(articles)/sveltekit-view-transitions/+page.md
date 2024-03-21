@@ -2,6 +2,10 @@
 url: "sveltekit-view-transitions"
 title: "View Transitions in SvelteKit"
 date: "2024-03-20"
+description: >
+  Guide to using View Transitions in SvelteKit,
+  with a pratical example on how it can be implemented
+  for full-page view transition animations.
 tags:
   - "Software Engineering"
   - "JavaScript"
@@ -20,8 +24,6 @@ without using any third party libraries.
 The goal of this article is to achieve animations when navigating between pages,
 specifically full-page animations.
 For example: "when navigating from /a to /b, make /b slide in over /a".
-
-<!--more-->
 
 ## View Transitions
 

@@ -2,6 +2,10 @@
 url: "counters-postgresql-django"
 title: "Counters with PostgreSQL and Django"
 date: "2019-12-27"
+description: >
+  Guide to implementing counters in PostgreSQL,
+  especially paying attention to common pitfalls,
+  with pratical code examples in SQL and Django ORM.
 tags:
   - "Software Engineering"
   - "PostgreSQL"

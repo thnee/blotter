@@ -2,6 +2,8 @@
 url: "cloud-network-design"
 title: "Cloud network design"
 date: "2021-05-16"
+description: >
+  Designing subnets for scalability in cloud VPCs with practical examples.
 tags:
   - "System Administration"
   - "Cloud Platforms"
@@ -12,8 +14,6 @@ Cloud VPCs come with some subnet configuration predefined.
 It is usually best to delete the default VPCs, and define subnets yourself.
 This article contains an overview of how to design subnets in the cloud,
 and gives concrete examples to use in real environments.
-
-<!--more-->
 
 
 

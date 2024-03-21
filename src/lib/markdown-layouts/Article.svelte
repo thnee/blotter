@@ -6,6 +6,8 @@
 
 <Seo
 	title={title}
+	description={description}
+	keywords={tags}
 />
 
 <div class="flex flex-col gap-4 mt-10">

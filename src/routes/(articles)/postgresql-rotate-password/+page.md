@@ -2,6 +2,8 @@
 url: "postgresql-rotate-password"
 title: "PostgreSQL rotate password"
 date: "2020-03-09"
+description: >
+  Quick practical guide to changing passwords without downtime in PostgreSQL.
 tags:
   - "Software Engineering"
   - "PostgreSQL"
@@ -13,8 +15,6 @@ Quick recipe for how to rotate password in PostgreSQL without downtime.
 PostgreSQL roles can be created as members of another role,
 giving them the potential to inherit their privileges,
 assuming the INHERIT attribute is set (the default).
-
-<!--more-->
 
 This is what the documentation has to say about it.
 

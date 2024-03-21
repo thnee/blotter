@@ -2,6 +2,8 @@
 url: "sftp-isolated-users"
 title: "SFTP server with isolated users"
 date: "2020-03-31"
+description: >
+  Quick pratical guide to creating SFTP server with isolated users using Ansible.
 tags:
   - "System Administration"
   - "SFTP"
@@ -12,8 +14,6 @@ SFTP is an old protocol that still sees a lot of usage,
 for a good reason, it is very secure.  
 Let's take a look at how to configure SSHD to support multiple isolated SFTP users,
 using Ansible.
-
-<!--more-->
 
 These are the goals that will be achieved in this article.
 

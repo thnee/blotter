@@ -2,6 +2,8 @@
 url: "pcengines-apu2c4-assembly"
 title: "PC Engines APU2C4 Assembly"
 date: "2016-06-05"
+description:
+  Building a DIY network router and connecting to it over serial port connection.
 tags:
   - "Hardware"
   - "Networking"
@@ -12,8 +14,6 @@ tags:
 </script>
 
 So, I decided I ~~need~~ want a new router. Partly because the support ended for my current Netgear router, and because I always wanted a good reason to run some BSD so I could learn more about it and networking in general.
-
-<!-- more -->
 
 I researched a bunch of boards with Intel Atom / Celeron CPU's at first. But finally decided on a [PC Engines apu2c4](http://pcengines.ch/apu2c4.htm), for some not too shabby reasons:
 

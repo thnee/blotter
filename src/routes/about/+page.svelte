@@ -21,6 +21,7 @@
 
 <Seo
 	title="About"
+	description="About the author"
 />
 
 <div class="

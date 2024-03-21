@@ -2,6 +2,8 @@
 url: "samba-freebsd-zfs-nfsv4-acls"
 title: "Samba 4 on FreeBSD with ZFS and NFSv4 ACLs"
 date: "2017-07-11"
+description: >
+  How to setup Samba with NFSv4 ACLs on ZFS, with pratical examples.
 tags:
   - "System Administration"
   - "FreeBSD"

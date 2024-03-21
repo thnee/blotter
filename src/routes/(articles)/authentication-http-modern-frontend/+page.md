@@ -2,17 +2,12 @@
 url: "authentication-http-modern-frontend"
 title: "Authentication over HTTP in modern frontend apps"
 date: "2022-10-17"
+description: >
+  Guide to doing authentication over HTTP correctly in modern frontend apps.
 tags:
   - "Software Engineering"
   - "Security"
 ---
-
-A guide on what to do and not do
-when building authentication over HTTP for a typical modern frontend app.
-
-<!--more-->
-
-
 
 ## What not to do
 

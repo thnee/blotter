@@ -2,6 +2,9 @@
 url: "supermicro-x11ssm-assembly"
 title: "SuperMicro X11SSM Assembly"
 date: "2017-05-24"
+description: >
+  Building a home server using proper server hardware from SuperMicro,
+  and connecting to it with IPMI.
 tags:
   - "Hardware"
   - "FreeBSD"

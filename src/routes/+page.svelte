@@ -6,6 +6,16 @@
 
 <Seo
 	title="Tech blog"
+	description="Articles about technology."
+	keywords={[
+		"programming",
+		"software engineering",
+		"devops",
+		"system administration",
+		"computer technology",
+		"blog",
+		"articles",
+	]}
 />
 
 <div class="flex flex-col gap-10">

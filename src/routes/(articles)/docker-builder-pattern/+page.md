@@ -2,6 +2,8 @@
 url: "docker-builder-pattern"
 title: "Docker builder pattern"
 date: "2018-08-19"
+description: >
+  Using docker to build software locally without running it in docker in produciton.
 tags:
   - "Software Engineering"
   - "Docker"

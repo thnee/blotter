@@ -10,6 +10,7 @@ export function load() {
 				dateObj: new Date(mod.metadata.date),
 				url: `/${mod.metadata.url}`,
 				title: mod.metadata.title,
+				description: mod.metadata.description,
 				tags: mod.metadata.tags,
 			});
 		}
