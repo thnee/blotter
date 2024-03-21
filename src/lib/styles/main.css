@@ -83,6 +83,7 @@
 @layer components {
 	.badge {
 		@apply bg-neutral-700/40 py-[2px] px-[10px] rounded-md;
+		@apply text-nowrap;
 	}
 
 	.note {

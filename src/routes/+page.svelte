@@ -10,7 +10,7 @@
 
 <div class="flex flex-col gap-10">
 	{#each data.articles as article}
-		<div class="flex flex-col items-center gap-2">
+		<div class="flex flex-col items-center gap-2 text-center">
 			<a
 				class="text-2xl"
 				href={article.url}
@@ -22,7 +22,7 @@
 				{article.date}
 			</div>
 
-			<div class="flex gap-2">
+			<div class="flex items-center flex-wrap gap-2 justify-center">
 				{#each article.tags as tag}
 					<div class="badge">
 						{tag}
