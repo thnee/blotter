@@ -13,16 +13,16 @@ tags:
   - "SvelteKit"
 ---
 
-This is not really a how-to, but more of a how-it-could-be-done-in-this-case.
+This is not really a how-to, but more of a how-it-could-be-done-in-this-case.  
 View transitions and animations are complex,
 and different projects will most definitely need different solutions.
 
-There are a few fundamental concepts in JavaScript and SvelteKit, that are relevant.
+There are a few fundamental concepts in JavaScript and SvelteKit, that are relevant.  
 This article demonstrates one way of putting the concepts together in practice,
 without using any third party libraries.
 
 The goal of this article is to achieve animations when navigating between pages,
-specifically full-page animations.
+specifically full-page animations.  
 For example: "when navigating from /a to /b, make /b slide in over /a".
 
 ## View Transitions
@@ -84,24 +84,6 @@ In the most typical scenario,
 implementing the animations in JavaScript
 is going to be a lot simpler and allow for more flexibility with less code.
 
-
-## SvelteKit page store
-
-There is a [builtin store called `page`][sveltekit-app-stores-page]
-which contains information about the current page.
-
-When navigating to a new page,
-the `page` store is updated before the `onNavigation` handler is triggered.  
-So it's possible to query it and use that information
-in some logic in the navigation lifecycle handler.
-
-```svelte
-<script>
-  import { page } from "$app/stores";
-  console.log($page.route);
-</script>
-```
-
 ## Animations
 
 Animations can be done either via CSS or via JavaScript.  
@@ -117,48 +99,64 @@ This effect is probably the most common scenario in a typical application.
 
 It will produce the following effect:
 
-- The page `/list` is not animated, it remains static during navigation.
-- The page `/details` is animated, with a sliding animation.
-- When navigating from `/list` to `/details`,
-  the `/details` page will slide in from the left, covering the `/list` page.
-- When navigating from `/details` to `/list`,
-  the `/details` page will slide out to the left, revealing the `/list` page.
-- During these animations,
-  the `/details` page will always be on top of the `/list` page.
+When navigating from `/list` to `/details`:
+
+- The `/details` page will slide in from the left, covering the `/list` page.
+- The `/list` page will fade out, remaining in the same position.
+
+When navigating from `/details` to `/list`:
+
+- The `/details` page will slide out to the left, revealing the `/list` page.
+- The `/list` page will fade in, remaining in the same position.
+
+When navigating between any other pages, that are not defined in the config:
+
+- Don't animate anything.
+- Don't even start a View Transition.
 
 #### File: `lib/transitions.js`
 
-This file contains central logic for View Transitions,
-so that individual pages only need to contain a minimum amount of code.
-
 ```js
-import { get } from "svelte/store";
-import { page } from "$app/stores";
 import { onNavigate } from "$app/navigation";
 
-export default class Transitions {
-  /*
-  * Register that the current page in the page store should
-  * have the animation defined by the name parameter.
-  * Should be called from a specific page that wants to have a View Transition.
-  */
-  registerPage(name) {
-    let sourcePage = get(page);
-    this.pageConfig = {
-      animationName: name,
-      route: sourcePage.route,
+class Transitions {
+  pageConfig = [
+    this.makePageConfig("/list", "fade", "/details", "slide-left"),
+  ];
+
+  makePageConfig(sourceRouteId, sourceAnimation, targetRouteId, targetAnimation) {
+    function getAnimation(name) {
+      if (name == "fade") {
+        return {
+          enter: {name: "fade-in"},
+          leave: {name: "fade-out"},
+        };
+      }
+      if (name == "slide-left") {
+        return {
+          enter: {name: "slide-in-from-left"},
+          leave: {name: "slide-out-to-left"},
+        };
+      }
+    }
+    return {
+      source: {
+        route: {id: sourceRouteId},
+        ...getAnimation(sourceAnimation),
+      },
+      target: {
+        route: {id: targetRouteId},
+        ...getAnimation(targetAnimation),
+      },
     };
   }
 
-  /*
-  * Setup View Transitions for page navigation.
-  * Can be called from any page, or more conveniently from the root layout,
-  * to enable View Transitions for all page navigations in the site.
-  */
   onNavigateViewTransition() {
     onNavigate((navigation) => {
-      // If view transitions are not available, do nothing.
-      if (!document.startViewTransition) return;
+      let transitionConfig = this.getTransitionConfig(navigation);
+
+      // If there is no transition config for this navigation, do nothing.
+      if (!transitionConfig) return;
 
       return new Promise(async (resolve) => {
         const viewTransition = document.startViewTransition(async () => {
@@ -167,78 +165,89 @@ export default class Transitions {
         });
         // Wait until the new page has been created in the DOM.
         await viewTransition.ready;
-        this.animate(navigation);
+        this.performViewTransition(transitionConfig);
       });
     });
   }
 
-  animate(navigation) {
-    if (this.pageConfig) {
-      // If navigating to a page with a defined animation.
-      if (this.pageConfig.route.id == navigation.to.route.id) {
-        this.animatePage(this.pageConfig.animationName, "entering");
-      }
+  getTransitionConfig(navigation) {
+    // If view transitions are not available, do nothing.
+    if (!document.startViewTransition) return;
 
-      // If navigating from a page with a defined animation.
-      if (this.pageConfig.route.id == navigation.from.route.id) {
-        this.animatePage(this.pageConfig.animationName, "leaving");
+    // Try to find a matching page configuration for current navigation routes.
+    for (const config of this.pageConfig) {
+      // If going from source to target, direction is entering.
+      if (
+        config.source.route.id == navigation.from.route.id &&
+        config.target.route.id == navigation.to.route.id
+      ) {
+        return {...config, direction: "entering"};
+      }
+      // If going from target to source, direction is leaving.
+      if (
+        config.source.route.id == navigation.to.route.id &&
+        config.target.route.id == navigation.from.route.id
+      ) {
+        return {...config, direction: "leaving"};
       }
     }
   }
 
-  animatePage(animationName, direction) {
-    // Define values that apply to all animations.
+  performViewTransition(config) {
+    if (config.direction == "entering") {
+      this.animatePage(config.source.leave, "old");
+      this.animatePage(config.target.enter, "new", true);
+    }
+    if (config.direction == "leaving") {
+      this.animatePage(config.target.leave, "old", true);
+      this.animatePage(config.source.enter, "new");
+    }
+  }
+
+  animatePage(animation, el, onTop) {
+    let keyframes = [];
     let options = {};
-    let keyframeAttrs = {};
-    let keyframeStart = {zIndex: "999"};
-    let keyframeEnd = {zIndex: "999"};
 
-    if (animationName == "slide-left") {
-      keyframeAttrs.transform = "translateX(-100vw)";
-      options.easing = "ease-in-out";
-      options.duration = 300;
+    if (animation.name == "fade-in") {
+      keyframes = [
+        {opacity: "0"},
+        {opacity: "1"},
+      ];
+    }
+    if (animation.name == "fade-out") {
+      keyframes = [
+        {opacity: "1"},
+        {opacity: "0"},
+      ];
+    }
+    if (animation.name == "slide-in-from-left") {
+      keyframes = [
+        {transform: "translate(-100vw)"},
+        {transform: "translate(0vw)"},
+      ];
+    }
+    if (animation.name == "slide-out-to-left") {
+      keyframes = [
+        {transform: "translate(0vw)"},
+        {transform: "translate(-100vw)"},
+      ];
     }
 
-    // If navigating to the page,
-    // apply the animation to the starting keyframe on the new page element.
-    if (direction == "entering") {
-      Object.assign(keyframeStart, keyframeAttrs);
-      options.pseudoElement = "::view-transition-new(root)";
+    if (onTop) {
+      keyframes[0].zIndex = "999";
+      keyframes[1].zIndex = "999";
     }
 
-    // If navigating from the page,
-    // apply the animation to the ending keyframe on the old page element.
-    if (direction == "leaving") {
-      Object.assign(keyframeEnd, keyframeAttrs);
-      options.pseudoElement = "::view-transition-old(root)";
-    }
-    document.documentElement.animate([keyframeStart, keyframeEnd], options);
+    options.easing = "ease-in-out";
+    options.duration = 250;
+
+    options.pseudoElement = `::view-transition-${el}(root)`;
+    document.documentElement.animate(keyframes, options);
   }
 }
 
-
 let transitions = new Transitions();
 export default transitions;
-```
-
-#### File: `routes/list/+page.svelte`
-
-```svelte
-<a href="/details">To details page</a>
-```
-
-#### File: `routes/details/+page.svelte`
-
-```svelte
-<script>
-  import transitions from "$lib/transitions";
-
-  // Define that this page will slide from and to the left,
-  // when entering and leaving this page.
-  transitions.registerPage("slide-left");
-</script>
-
-<a href="/list">Back to list page</a>
 ```
 
 #### File: `routes/+layout.svelte`
@@ -247,19 +256,11 @@ export default transitions;
 <script>
   import transitions from "$lib/transitions";
 
-  // Enable View Transitions for all pages on this site.
   transitions.onNavigateViewTransition();
 </script>
 
 <slot />
-
-<style>
-  /* Change the default view transition animation from fade to nothing.*/
-  :root::view-transition-new(root) { animation: none; }
-  :root::view-transition-old(root) { animation: none; }
-</style>
 ```
-
 
 
 
@@ -268,9 +269,6 @@ export default transitions;
 
 [sveltekit-onnavigate]: https://kit.svelte.dev/docs/modules#$app-navigation-onnavigate
 [svelte-blog-sveltekit-view-transitions]: https://svelte.dev/blog/view-transitions
-
-[sveltekit-app-stores-page]: https://kit.svelte.dev/docs/modules#$app-stores-page
-[svelte-store]: https://svelte.dev/docs/svelte-store
 
 [mdn-css-animation]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
 [mdn-js-animate]: https://developer.mozilla.org/en-US/docs/Web/API/Element/animate
