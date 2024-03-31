@@ -1,22 +1,6 @@
 <script>
-	import Seo from "$lib/Seo.svelte";
-
 	export let data;
 </script>
-
-<Seo
-	title="Tech blog"
-	description="Articles about technology."
-	keywords={[
-		"programming",
-		"software engineering",
-		"devops",
-		"system administration",
-		"computer technology",
-		"blog",
-		"articles",
-	]}
-/>
 
 <div class="flex flex-col gap-4">
 	{#each data.articles as article}

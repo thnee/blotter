@@ -1,30 +1,23 @@
 <script>
-	import Seo from "$lib/Seo.svelte";
-
-	let { title, date, description, tags } = $props();
+	let { data } = $props();
+	let mdMeta = data.mdMeta;
 </script>
-
-<Seo
-	title={title}
-	description={description}
-	keywords={tags}
-/>
 
 <div class="flex flex-col gap-4 mt-10 border-b border-red-700/50 pb-4">
 	<h1 class="text-4xl font-semibold">
-		{title}
+		{mdMeta.title}
 	</h1>
 
 	<div>
-		{description}
+		{mdMeta.description}
 	</div>
 
 	<div class="flex items-center gap-2 flex-wrap">
 		<div>
-			{date}
+			{mdMeta.date}
 		</div>
 
-		{#each tags as tag}
+		{#each mdMeta.tags as tag}
 			<div class="badge">
 				{tag}
 			</div>

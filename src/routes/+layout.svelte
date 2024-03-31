@@ -7,6 +7,26 @@
 
 	let { data } = $props();
 
+	let head = $state({
+		title: "thnee.se",
+		keywords: [
+			"programming",
+			"software engineering",
+			"devops",
+			"system administration",
+			"computer technology",
+			"blog",
+			"articles",
+		],
+		author: "Mattias Lindvall",
+	});
+
+	if ($page.data.pageMeta) {
+		head.title = $page.data.pageMeta.title + " • thnee.se";
+		head.description = $page.data.pageMeta.description;
+		head.keywords = head.keywords.concat($page.data.pageMeta.keywords || []);
+	}
+
 	let menu = {
 		"/": "Articles",
 		"/about": "About",
@@ -41,6 +61,17 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+	<title>{head.title}</title>
+	{#if head.description}
+		<meta name="description" content={head.description}>
+	{/if}
+	{#if head.keywords}
+		<meta name="keywords" content={head.keywords.join(" ")}>
+	{/if}
+	{#if head.author}
+		<meta name="author" content={head.author}>
+	{/if}
 
 	{#if data.ENABLE_GA == "true"}
 		<!-- Google tag (gtag.js) -->

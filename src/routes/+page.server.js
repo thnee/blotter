@@ -25,6 +25,10 @@ export function load() {
 	});
 
 	return {
-		articles,
-	}
+		articles: articles,
+		pageMeta: {
+			title: "Tech blog",
+			description: "Articles about technology.",
+		},
+	};
 }

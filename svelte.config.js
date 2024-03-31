@@ -18,10 +18,6 @@ export default {
 		}),
 		mdsvex({
 			extensions: [".md"],
-			layout: {
-				"article": "./src/lib/markdown-layouts/Article.svelte",
-				"_": "./src/lib/markdown-layouts/Article.svelte",
-			},
 		}),
 	],
 
