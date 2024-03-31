@@ -260,6 +260,16 @@ export default transitions;
 </script>
 
 <slot />
+
+<style>
+  // Disable the default view transition animation.
+  :root::view-transition-new(root) {
+    animation: none;
+  }
+  :root::view-transition-old(root) {
+    animation: none;
+  }
+</style>
 ```
 
 
