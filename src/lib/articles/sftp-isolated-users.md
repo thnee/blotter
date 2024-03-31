@@ -1,5 +1,5 @@
 ---
-url: "sftp-isolated-users"
+slug: "sftp-isolated-users"
 title: "SFTP server with isolated users"
 date: "2020-03-31"
 description: >

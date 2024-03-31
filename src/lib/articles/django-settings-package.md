@@ -1,5 +1,5 @@
 ---
-url: "django-settings-package"
+slug: "django-settings-package"
 title: "Django settings package"
 date: "2017-08-19"
 description: >

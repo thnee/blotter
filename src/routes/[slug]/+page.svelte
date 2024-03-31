@@ -23,9 +23,9 @@
 			</div>
 		{/each}
 	</div>
-
 </div>
 
+
 <div class="article mt-4">
-	<slot />
+	<svelte:component this={data.pageComp} />
 </div>

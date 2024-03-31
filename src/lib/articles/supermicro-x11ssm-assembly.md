@@ -1,5 +1,5 @@
 ---
-url: "supermicro-x11ssm-assembly"
+slug: "supermicro-x11ssm-assembly"
 title: "SuperMicro X11SSM Assembly"
 date: "2017-05-24"
 description: >

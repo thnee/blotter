@@ -1,5 +1,5 @@
 ---
-url: "authentication-http-modern-frontend"
+slug: "authentication-http-modern-frontend"
 title: "Authentication over HTTP in modern frontend apps"
 date: "2022-10-17"
 description: >

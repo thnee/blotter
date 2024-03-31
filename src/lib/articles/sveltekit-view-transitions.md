@@ -1,5 +1,5 @@
 ---
-url: "sveltekit-view-transitions"
+slug: "sveltekit-view-transitions"
 title: "View Transitions in SvelteKit"
 date: "2024-03-20"
 description: >
@@ -261,8 +261,8 @@ export default transitions;
 
 <slot />
 
-<style>
-  // Disable the default view transition animation.
+\<style\>
+  /* Disable the default view transition animation. */
   :root::view-transition-new(root) {
     animation: none;
   }

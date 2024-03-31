@@ -1,5 +1,5 @@
 ---
-url: "docker-builder-pattern"
+slug: "docker-builder-pattern"
 title: "Docker builder pattern"
 date: "2018-08-19"
 description: >

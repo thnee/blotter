@@ -1,5 +1,5 @@
 ---
-url: "freebsd-iocage-primer"
+slug: "freebsd-iocage-primer"
 title: "FreeBSD Iocage Primer"
 date: "2017-06-20"
 description: >

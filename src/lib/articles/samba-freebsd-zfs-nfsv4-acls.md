@@ -1,5 +1,5 @@
 ---
-url: "samba-freebsd-zfs-nfsv4-acls"
+slug: "samba-freebsd-zfs-nfsv4-acls"
 title: "Samba 4 on FreeBSD with ZFS and NFSv4 ACLs"
 date: "2017-07-11"
 description: >

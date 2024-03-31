@@ -1,5 +1,5 @@
 ---
-url: "cloud-network-design"
+slug: "cloud-network-design"
 title: "Cloud network design"
 date: "2021-05-16"
 description: >

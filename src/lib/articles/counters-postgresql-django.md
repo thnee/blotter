@@ -1,5 +1,5 @@
 ---
-url: "counters-postgresql-django"
+slug: "counters-postgresql-django"
 title: "Counters with PostgreSQL and Django"
 date: "2019-12-27"
 description: >

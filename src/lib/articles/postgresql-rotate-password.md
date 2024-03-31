@@ -1,5 +1,5 @@
 ---
-url: "postgresql-rotate-password"
+slug: "postgresql-rotate-password"
 title: "PostgreSQL rotate password"
 date: "2020-03-09"
 description: >
