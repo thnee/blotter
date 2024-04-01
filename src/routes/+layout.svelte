@@ -7,25 +7,35 @@
 
 	let { data } = $props();
 
-	let head = $state({
-		title: "thnee.se",
-		keywords: [
-			"programming",
-			"software engineering",
-			"devops",
-			"system administration",
-			"computer technology",
-			"blog",
-			"articles",
-		],
-		author: "Mattias Lindvall",
-	});
+	let siteName = "thnee.se";
+	let defaultKeywords = [
+		"programming",
+		"software engineering",
+		"devops",
+		"system administration",
+		"computer technology",
+		"blog",
+		"articles",
+	];
+	let author = "Mattias Lindvall";
 
-	if ($page.data.pageMeta) {
-		head.title = $page.data.pageMeta.title + " • thnee.se";
-		head.description = $page.data.pageMeta.description;
-		head.keywords = head.keywords.concat($page.data.pageMeta.keywords || []);
-	}
+	let head = $state({});
+
+	let setHead = () => {
+		if ($page.data.pageMeta) {
+			head.title = $page.data.pageMeta.title + " • " + siteName;
+			head.description = $page.data.pageMeta.description;
+			head.keywords = [...defaultKeywords, ...$page.data.pageMeta.keywords || []];
+		} else {
+			head.title = siteName;
+			head.description = undefined;
+			head.keywords = defaultKeywords;
+		}
+		head.author = author;
+	};
+
+	setHead();
+	$effect(setHead);
 
 	let menu = {
 		"/": "Articles",
