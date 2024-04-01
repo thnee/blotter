@@ -25,7 +25,6 @@
 	</div>
 </div>
 
-
 <div class="article mt-4">
 	<svelte:component this={data.pageComp} />
 </div>
