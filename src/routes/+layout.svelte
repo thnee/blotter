@@ -22,13 +22,19 @@
 	let head = $state({});
 
 	let setHead = () => {
-		if ($page.data.pageMeta) {
+		if ($page.data.pageMeta.title) {
 			head.title = $page.data.pageMeta.title + " • " + siteName;
-			head.description = $page.data.pageMeta.description;
-			head.keywords = [...defaultKeywords, ...$page.data.pageMeta.keywords || []];
 		} else {
 			head.title = siteName;
+		}
+		if ($page.data.pageMeta.description) {
+			head.description = $page.data.pageMeta.description;
+		} else {
 			head.description = undefined;
+		}
+		if ($page.data.pageMeta.keywords) {
+			head.keywords = [...defaultKeywords, ...$page.data.pageMeta.keywords || []];
+		} else {
 			head.keywords = defaultKeywords;
 		}
 		head.author = author;
