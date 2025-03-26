@@ -9,20 +9,28 @@
 	import FilmProjectorIcon from "~icons/noto/film-projector";
 
 	let keywords = [
+		"Software Development", "DevOps", "DevEx",
 		"Google Cloud Platform", "Amazon Web Services",
+		"IAM", "VPC", "Compute",
+		"Load balancing", "Service mesh", "Pub/Sub", "Obervability", "VPN", "VPS",
 		"Linux", "FreeBSD",
-		"Python", "Django", "Flask", "SQLAlchemy",
+		"OPNsense", "pfSense",
+		"Terraform", "Packer", "Docker", "Ansible",
+		"Consul", "Nomad",
+		"Python", "Flask", "Sanic", "FastAPI", "Django", "SQLAlchemy", "Celery",
 		"C", "CMake",
-		"Ansible", "Packer", "Terraform", "Bash",
-		"PostgreSQL", "MySQL", "InfluxDB",
+		"Golang", "Bash",
+		"PostgreSQL", "MySQL", "InfluxDB", "SQLite",
+		"Redis", "RabbitMQ",
 		"Gunicorn", "uWSGI", "nginx", "Apache httpd",
-		"Pub/Sub", "Celery", "RabbitMQ",
-		"ffmpeg", "HLS",
 		"HTML", "CSS", "SCSS", "JavaScript",
+		"Svelte", "SvelteKit", "Vue.js", "Nuxt.js", "React", "Angular",
+		"Tauri", "Capacitor",
 		"HTTP", "APIs", "TCP/IP",
+		"ffmpeg", "HLS",
 	];
 	let hobbies = [
-		"Gaming", "Trading", "Biking", "Climbing",
+		"Running", "Biking", "Gaming", "Movies",
 	];
 </script>
 
