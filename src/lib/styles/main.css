@@ -6,6 +6,7 @@
 		color: white;
 		overflow-y: scroll;
 		font-family: "IBM Plex Sans", sans-serif;
+		min-height: 100vh;
 	}
 
 	code, pre {

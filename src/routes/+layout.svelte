@@ -49,7 +49,7 @@
 	};
 </script>
 
-<div class="max-w-[1200px] mx-auto my-12 px-4">
+<div class="max-w-[1200px] mx-auto py-12 px-4">
 	<div class="flex flex-col items-center mb-12">
 		<h1
 			class="text-6xl"
