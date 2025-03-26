@@ -15,6 +15,7 @@ export default {
 			pages: "build",
 			assets: "build",
 			precompress: true,
+			strict: true,
 		}),
 	},
 };
