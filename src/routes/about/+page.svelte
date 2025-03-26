@@ -50,7 +50,7 @@
 	</div>
 </div>
 
-<div class="flex flex-wrap gap-2 justify-center">
+<div class="flex flex-wrap gap-3 justify-center">
 	{#each keywords as keyword}
 		<div class="badge">
 			{keyword}
@@ -58,7 +58,7 @@
 	{/each}
 </div>
 
-<div class="my-12 flex flex-wrap gap-2 justify-center">
+<div class="flex flex-wrap gap-3 justify-center py-12">
 	{#each hobbies as keyword}
 		<div class="badge">
 			{keyword}
@@ -66,7 +66,7 @@
 	{/each}
 </div>
 
-<div class="flex justify-between items-center p-10">
+<div class="flex flex-col md:flex-row justify-between items-center py-4 px-32">
 	<div class="flex flex-col gap-1.5">
 		<ContactLink
 			icon={GmailIcon}
@@ -107,7 +107,7 @@
 		/>
 	</div>
 
-	<div class="badges">
+	<div class="py-12 md:py-0">
 		<a href="https://freebsdfoundation.org/donate" target="_blank">
 			<img
 				src="https://freebsdfoundation.org/wp-content/uploads/2015/12/proud_donor.gif"
