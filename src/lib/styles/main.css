@@ -58,7 +58,7 @@
 			}
 		}
 		code {
-			@apply py-0.5 px-1.5 rounded;
+			@apply py-0.5 px-1.5 rounded-sm;
 		}
 		pre {
 			@apply p-4 rounded-md overflow-auto;
