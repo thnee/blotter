@@ -11,6 +11,7 @@ tags:
 
 <script>
 	import Image from "$lib/Image.svelte";
+	import HeartIcon from "~icons/mdi/heart";
 </script>
 
 So, I decided I ~~need~~ want a new router. Partly because the support ended for my current Netgear router, and because I always wanted a good reason to run some BSD so I could learn more about it and networking in general.
@@ -22,7 +23,7 @@ I researched a bunch of boards with Intel Atom / Celeron CPU's at first. But fin
 - Intel NICs help offload the CPU more than Realtek NICs.
 - The Jaguar CPU should be able to push several hundred mega bytes per second.
 - It also has AES-NI which is nice if I ever want to do VPN.
-- AMD <i class="fa fa-heart fa-fw"></i> Open Source.
+- AMD <HeartIcon class="inline" /> Open Source.
 
 The only downside I can see:
 

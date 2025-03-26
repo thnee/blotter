@@ -1,4 +1,13 @@
 <script>
+	import ContactLink from "./ContactLink.svelte";
+
+	import GithubIcon from "~icons/fa-brands/github";
+	import GmailIcon from "~icons/logos/google-gmail";
+	import GitlabIcon from "~icons/logos/gitlab";
+	import LinkedInIcon from "~icons/logos/linkedin-icon";
+	import StackOverflowIcon from "~icons/logos/stackoverflow-icon";
+	import FilmProjectorIcon from "~icons/noto/film-projector";
+
 	let keywords = [
 		"Google Cloud Platform", "Amazon Web Services",
 		"Linux", "FreeBSD",
@@ -50,44 +59,45 @@
 </div>
 
 <div class="flex justify-between items-center p-10">
-	<ul class="contact-links">
-		<li>
-			<a href="mailto:mattias.lindvall@gmail.com">
-				<i class="fa fa-envelope-o fa-fw"></i>
-				<span>Email</span>
-			</a>
-		</li>
-		<li>
-			<a href="https://www.linkedin.com/in/mattiaslindvall/">
-				<i class="fa fa-linkedin fa-fw"></i>
-				<span>LinkedIn</span>
-			</a>
-		</li>
-		<li>
-			<a href="https://gitlab.com/thnee">
-				<i class="fa fa-gitlab fa-fw"></i>
-				<span>Gitlab</span>
-			</a>
-		</li>
-		<li>
-			<a href="https://github.com/thnee">
-				<i class="fa fa-github-alt fa-fw"></i>
-				<span>Github</span>
-			</a>
-		</li>
-		<li>
-			<a href="https://stackexchange.com/users/171980/thnee">
-				<i class="fa fa-stack-exchange fa-fw"></i>
-				<span>StackExchange</span>
-			</a>
-		</li>
-		<li>
-			<a href="https://www.filmtipset.se/medlem/thnee">
-				<i class="fa fa-film fa-fw"></i>
-				<span>Filmtipset</span>
-			</a>
-		</li>
-	</ul>
+	<div class="flex flex-col gap-1.5">
+		<ContactLink
+			icon={GmailIcon}
+			iconSize="20px"
+			label="Email"
+			href="mailto:mattias.lindvall@gmail.com"
+		/>
+		<ContactLink
+			icon={LinkedInIcon}
+			iconSize="28px"
+			label="LinkedIn"
+			href="https://www.linkedin.com/in/mattiaslindvall/"
+		/>
+		<ContactLink
+			icon={GithubIcon}
+			iconSize="28px"
+			iconColor="white"
+			label="Github"
+			href="https://github.com/thnee"
+		/>
+		<ContactLink
+			icon={GitlabIcon}
+			iconSize="24px"
+			label="Gitlab"
+			href="https://gitlab.com/thnee"
+		/>
+		<ContactLink
+			icon={StackOverflowIcon}
+			iconSize="30px"
+			label="StackOverflow"
+			href="https://stackoverflow.com/users/399725/thnee"
+		/>
+		<ContactLink
+			icon={FilmProjectorIcon}
+			iconSize="32px"
+			label="Filmtipset"
+			href="https://www.filmtipset.se/medlem/thnee"
+		/>
+	</div>
 
 	<div class="badges">
 		<a href="https://freebsdfoundation.org/donate" target="_blank">
