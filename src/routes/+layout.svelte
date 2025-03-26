@@ -5,7 +5,7 @@
 
 	import "$lib/styles/main.css";
 
-	let { data } = $props();
+	let { data, children } = $props();
 
 	let siteName = "thnee.se";
 	let defaultKeywords = [
@@ -70,7 +70,7 @@
 		</div>
 	</div>
 
-	<slot />
+	{@render children()}
 </div>
 
 <svelte:head>
