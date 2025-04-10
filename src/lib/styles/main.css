@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
 @layer base {
+	html {
+		background: #1b1b1b;
+		color: #f1f1f1;
+	}
+
 	body {
-		background: #171717;
-		color: white;
 		overflow-y: scroll;
 		font-family: "IBM Plex Sans", sans-serif;
 		min-height: 100vh;
