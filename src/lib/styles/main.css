@@ -64,6 +64,14 @@
 			@apply p-4 rounded-md overflow-auto;
 		}
 
+		blockquote {
+			@apply border-l-8 border-neutral-500 bg-neutral-500/15 py-2 px-4;
+
+			>:last-child {
+				margin-bottom: 0;
+			}
+		}
+
 		table {
 			@apply bg-neutral-800/25;
 			@apply border-separate border-spacing-0;
