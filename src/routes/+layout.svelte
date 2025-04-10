@@ -1,8 +1,6 @@
 <script>
 	import { page } from "$app/stores";
 
-	import "prismjs/themes/prism-tomorrow.css"
-
 	import "$lib/styles/main.css";
 
 	let { data, children } = $props();

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "prismjs/themes/prism-tomorrow.min.css";
+
 @layer base {
 	html, body {
 		height: 100%;
