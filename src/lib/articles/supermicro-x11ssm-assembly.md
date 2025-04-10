@@ -140,7 +140,7 @@ which enables the KVM console.
 Here is a look at the IPMIView software provided by SuperMicro.
 As far as I know it is only available as a Java based GUI program for Windows.
 
-<Image src="/supermicro-x11ssm-assembly/ipmi.png" />
+<Image src="/supermicro-x11ssm-assembly/ipmi.png" --max-width="1200px" />
 
 [starwars]: https://twitter.com/allanjude/status/656481424044748800
 
@@ -177,7 +177,7 @@ In this case I have two pools:
 - `tank` which was created by me, it contains a vdev
   consisting of the two WD Red drives in a mirror configuration.
 
-<Image src="/supermicro-x11ssm-assembly/zfs.png" />
+<Image src="/supermicro-x11ssm-assembly/zfs.png" --max-width="100%" />
 
 ## Upgrading
 

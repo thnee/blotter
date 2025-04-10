@@ -6,14 +6,21 @@
 	href={src}
 	class="
 		image
-		block my-2
-		border-4 border-neutral-600
-		w-max h-max
+		block
+		w-fit h-fit
+		border-4 border-neutral-500/30
+		rounded-xs
 	"
 >
 	<img
 		src={src}
 		alt={alt}
-		class="block max-w-[700px]"
+		class="block"
 	/>
 </a>
+
+<style>
+	.image {
+		max-width: var(--max-width, 700px);
+	}
+</style>
