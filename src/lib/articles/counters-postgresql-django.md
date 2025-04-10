@@ -13,6 +13,10 @@ tags:
   - "Django"
 ---
 
+<script>
+	import Note from "$lib/Note.svelte";
+</script>
+
 Almost all web apps will need counters.
 Let's take a look at how to create counters that are accurate and have good performance.
 
@@ -38,17 +42,17 @@ and the [Postgres Transaction Isolation docs][postgres-iso] are also really good
 This article is written for PostgreSQL
 using the default isolation level Read Committed.
 
-<div class="note note-info">
+<Note level="info">
 In PostgreSQL, MS SQL Server, and Oracle the default isolation level is Read Commited.<br>
 In MySQL/MariaDB the default isolation level is Repeatable Read.
-</div>
+</Note>
 
-<div class="note note-warning">
+<Note level="warning">
 It's not hard to change the isolation level itself,
 but keep in mind that changing the isolation level for an existing application
 can change how it functions, and application code may need to be refactored.
 So this is something you need to be aware of and choose correctly from the start.
-</div>
+</Note>
 
 
 
@@ -198,7 +202,7 @@ But it would be nice to have a solution that
 does not even have the potential for deadlocks.
 (Or *dreadlocks* as I like to say, jokingly).
 
-<div class="note note-danger">
+<Note level="danger">
 If some code has the potential to deadlock,
 it can go unnoticed for a long time,
 because it is unlikely to happen when you have low amounts of traffic.
@@ -207,7 +211,7 @@ so does the likelihood that the deadlock starts happening,
 and it can blow up in your face.
 So let's build a solution
 that does not even have the potential to deadlock in the first place.
-</div>
+</Note>
 
 
 ## Stage 3: Queue updates
@@ -390,14 +394,14 @@ This function will update two counters for every article and every user.
 - Total number of public comments published on every article.
 - Total number of public comments created by every user.
 
-<div class="note note-info">
+<Note level="info">
 This function is just an example, it does not handle every possible case.
 For example, it does not handle the case of
 changing the user or article on an existing comment.
 And it only counts public comments, not private comments.
 You will need to define what operations are supported and what counters are needed
 in your application, and handle those appropriately.
-</div>
+</Note>
 
 
 ## References

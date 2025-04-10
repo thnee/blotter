@@ -10,6 +10,10 @@ tags:
   - "Networking"
 ---
 
+<script>
+	import Note from "$lib/Note.svelte";
+</script>
+
 Cloud VPCs come with some subnet configuration predefined.
 It is usually best to delete the default VPCs, and define subnets yourself.
 This article contains an overview of how to design subnets in the cloud,
@@ -165,13 +169,13 @@ Allright, enough with the talking, let's look at some concrete examples.
 for an interactive tool where you can play around with the network and netmask
 to get an even better understanding of what is happening. -->
 
-<div class="note note-info">
+<Note level="info">
 These are real world examples that I have designed and used myself.<br>
 They are intended as general purpose designs
 that should work for any arbitrary organization.<br>
 Even so, that does not mean you should blindly copy these designs,
 every organization may have its own special needs.
-</div>
+</Note>
 
 ### AWS
 

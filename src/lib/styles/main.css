@@ -84,24 +84,4 @@
 		@apply bg-neutral-700/40 py-[2px] px-[10px] rounded-md;
 		@apply text-nowrap;
 	}
-
-	.note {
-		@apply p-3 px-4 rounded-md;
-
-		&-good {
-			@apply bg-green-500/50;
-		}
-
-		&-info {
-			@apply bg-sky-500/50;
-		}
-
-		&-warning {
-			@apply bg-orange-500/50;
-		}
-
-		&-danger {
-			@apply bg-red-500/50;
-		}
-	}
 }
