@@ -113,6 +113,7 @@
 				src="https://freebsdfoundation.org/wp-content/uploads/2015/12/proud_donor.gif"
 				alt="Proud Donor"
 				title="FreeBSD Foundation Donor"
+				class="rounded-md"
 			>
 		</a>
 	</div>
