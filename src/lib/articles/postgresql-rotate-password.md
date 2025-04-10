@@ -10,8 +10,6 @@ tags:
   - "Security"
 ---
 
-Quick recipe for how to rotate password in PostgreSQL without downtime.
-
 PostgreSQL roles can be created as members of another role,
 giving them the potential to inherit their privileges,
 assuming the INHERIT attribute is set (the default).
