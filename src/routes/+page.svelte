@@ -5,8 +5,9 @@
 <div class="flex flex-col gap-4">
 	{#each data.articles as article}
 		<div class="
-			flex flex-col gap-2 pb-4
+			flex flex-col items-start gap-2 pb-4
 			border-b border-red-700/50
+			last:border-0
 		">
 			<a
 				class="text-2xl"

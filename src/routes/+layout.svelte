@@ -49,8 +49,8 @@
 	};
 </script>
 
-<div class="max-w-[1200px] mx-auto py-12 px-4">
-	<div class="flex flex-col items-center mb-12">
+<div class="min-h-full flex flex-col">
+	<header class="min-w-0 flex flex-col items-center py-12">
 		<h1
 			class="text-6xl"
 			style="font-family: 'Abril Fatface';"
@@ -68,9 +68,11 @@
 				</a>
 			{/each}
 		</div>
-	</div>
+	</header>
 
-	{@render children()}
+	<main class="grow self-center w-full min-w-0 max-w-[1200px] px-4">
+		{@render children()}
+	</main>
 </div>
 
 <svelte:head>

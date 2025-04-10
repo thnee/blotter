@@ -35,7 +35,7 @@
 </script>
 
 <div class="
-	mx-auto my-10
+	mx-auto mb-10
 	flex flex-col gap-1
 	text-center
 ">
