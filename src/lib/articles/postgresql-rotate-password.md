@@ -16,11 +16,20 @@ assuming the INHERIT attribute is set (the default).
 
 This is what the documentation has to say about it.
 
-> The INHERIT attribute governs inheritance of grantable privileges (that is, access privileges for database objects and role memberships). It does not apply to the special role attributes set by CREATE ROLE and ALTER ROLE. For example, being a member of a role with CREATEDB privilege does not immediately grant the ability to create databases, even if INHERIT is set; it would be necessary to become that role via SET ROLE before creating a database.
+> The INHERIT attribute governs inheritance of grantable privileges
+> (that is, access privileges for database objects and role memberships).
+> It does not apply to the special role attributes set by CREATE ROLE and ALTER ROLE.
+> For example, being a member of a role with CREATEDB privilege does not immediately
+> grant the ability to create databases, even if INHERIT is set;
+> it would be necessary to become that role via SET ROLE before creating a database.
 
 Furthermore, INHERIT is enabled by default.
 
-> The INHERIT attribute is the default for reasons of backwards compatibility: in prior releases of PostgreSQL, users always had access to all privileges of groups they were members of. However, NOINHERIT provides a closer match to the semantics specified in the SQL standard.
+> The INHERIT attribute is the default for reasons of backwards compatibility:
+> in prior releases of PostgreSQL,
+> users always had access to all privileges of groups they were members of.
+> However, NOINHERIT provides a closer match
+> to the semantics specified in the SQL standard.
 
 
 
