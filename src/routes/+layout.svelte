@@ -1,5 +1,6 @@
 <script>
 	import { page } from "$app/stores";
+	import GithubIcon from "~icons/fa-brands/github";
 
 	import "$lib/styles/main.css";
 
@@ -71,12 +72,44 @@
 	<main class="grow self-center w-full min-w-0 max-w-[1200px] px-4">
 		{@render children()}
 	</main>
+
+	<footer class="
+		min-w-0
+		p-4 px-12 mt-10
+		bg-neutral-900
+		border-t-1 border-neutral-800
+		select-none
+	">
+		 <div class="
+			w-full max-w-[1200px] mx-auto
+			flex justify-center
+		">
+			<a
+				href="https://github.com/thnee/blotter"
+				class="
+				text-white no-underline
+					p-1.5 px-2.5 rounded-sm hover:bg-neutral-700/15
+					flex items-center gap-2.5
+				"
+			>
+				<GithubIcon />
+				<div class="
+					flex gap-1.5
+					text-sm text-white/80
+				">
+					<span>thnee</span>
+					<span class="text-white/30 ">/</span>
+					<span class="font-semibold">blotter</span>
+				</div>
+			</a>
+		</div>
+	</footer>
 </div>
 
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif&display=swap" rel="stylesheet">
 
 	<title>{head.title}</title>
 	{#if head.description}
