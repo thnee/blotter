@@ -3,9 +3,11 @@
 	let {
 		level,
 		children,
+		...rest
 	}: {
 		level: string;
 		children: Snippet;
+		[key: string]: unknown;
 	} = $props();
 
 	let bgColor = $state();
@@ -37,7 +39,13 @@
 
 </script>
 
-<div class="note p-2 px-3.5 rounded-xs border {bgColor} {borderColor}">
+<div class="
+	note
+	p-2 px-3.5
+	rounded-xs border
+	{bgColor} {borderColor}
+	{rest.class}
+">
 	{@render children()}
 </div>
 
