@@ -44,6 +44,7 @@
 
 	let menu = {
 		"/": "Articles",
+		"/apps": "Apps",
 		"/about": "About",
 	};
 </script>
