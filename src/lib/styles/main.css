@@ -2,25 +2,34 @@
 
 @import "prismjs/themes/prism-tomorrow.min.css";
 
+@theme {
+	--font-sans: "IBM Plex Sans";
+	--font-serif: "IBM Plex Serif", serif;
+	--font-mono: "IBM Plex Mono", monospace;
+
+	--color-bg: #1b1b1b;
+	--color-fg: #f1f1f1;
+}
+
 @layer base {
 	html, body {
 		height: 100%;
 	}
 
 	html {
-		background: #1b1b1b;
-		color: #f1f1f1;
+		@apply bg-bg;
+		@apply text-fg;
 	}
 
 	body {
 		overflow-y: scroll;
-		font-family: "IBM Plex Sans", sans-serif;
 		min-height: 100vh;
+		@apply font-sans;
 		font-size: 18px;
 	}
 
 	code, pre {
-		font-family: "IBM Plex Mono", monospace !important;
+		@apply !font-mono;
 		font-size: 16px !important;
 	}
 
@@ -38,7 +47,7 @@
 	.article {
 		h1, h2, h3, h4, h5, h6, h7 {
 			@apply mb-1.5 mt-8 font-semibold;
-			font-family: "IBM Plex Serif";
+			@apply font-serif;
 		}
 
 		h1 {
