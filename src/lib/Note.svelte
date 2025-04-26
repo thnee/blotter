@@ -1,10 +1,17 @@
-<script>
-	let { level, children } = $props();
+<script lang="ts">
+	import type { Snippet } from "svelte";
+	let {
+		level,
+		children,
+	}: {
+		level: string;
+		children: Snippet;
+	} = $props();
 
 	let bgColor = $state();
 	let borderColor = $state();
 
-	let colors = {
+	let colors: {[key:string]: any} = {
 		"good": {
 			"bg": "bg-emerald-500/10",
 			"border": "border-emerald-500/20",

@@ -1,5 +1,11 @@
-<script>
-	let { src, alt = "" } = $props();
+<script lang="ts">
+	let {
+		src,
+		alt = "",
+	}: {
+		src: string;
+		alt: string;
+	} = $props();
 </script>
 
 <a
