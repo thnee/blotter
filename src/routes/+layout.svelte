@@ -1,8 +1,9 @@
-<script>
-	import { page } from "$app/stores";
-	import GithubIcon from "~icons/fa-brands/github";
+<script lang="ts">
+	import { page } from "$app/state";
 
 	import "$lib/styles/main.css";
+
+	import GithubIcon from "~icons/fa-brands/github";
 
 	let { data, children } = $props();
 
@@ -18,21 +19,21 @@
 	];
 	let author = "Mattias Lindvall";
 
-	let head = $state({});
+	let head: { [key: string]: any } = $state({});
 
 	let setHead = () => {
-		if ($page.data.pageMeta.title) {
-			head.title = $page.data.pageMeta.title + " • " + siteName;
+		if (page.data.pageMeta.title) {
+			head.title = page.data.pageMeta.title + " • " + siteName;
 		} else {
 			head.title = siteName;
 		}
-		if ($page.data.pageMeta.description) {
-			head.description = $page.data.pageMeta.description;
+		if (page.data.pageMeta.description) {
+			head.description = page.data.pageMeta.description;
 		} else {
 			head.description = undefined;
 		}
-		if ($page.data.pageMeta.keywords) {
-			head.keywords = [...defaultKeywords, ...$page.data.pageMeta.keywords || []];
+		if (page.data.pageMeta.keywords) {
+			head.keywords = [...defaultKeywords, ...page.data.pageMeta.keywords || []];
 		} else {
 			head.keywords = defaultKeywords;
 		}
@@ -42,7 +43,7 @@
 	setHead();
 	$effect(setHead);
 
-	let menu = {
+	let menu: { [key: string]: string } = {
 		"/": "Articles",
 		"/apps": "Apps",
 		"/about": "About",
@@ -62,7 +63,7 @@
 			{#each Object.keys(menu) as key}
 				<a
 					href={key}
-					class:activeMenuItem={key == $page.route.id}
+					class:activeMenuItem={key == page.route.id}
 				>
 					{menu[key]}
 				</a>
@@ -109,7 +110,7 @@
 
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif&display=swap" rel="stylesheet">
 
 	<title>{head.title}</title>
