@@ -1,5 +1,5 @@
 <script>
-	import ArrowIcon from "~icons/mdi/arrow-right-thick";
+	import ArrowIcon from "~icons/carbon/arrow-right";
 </script>
 
 {#snippet card({title, href, description})}
