@@ -5,6 +5,8 @@
 
 	import GithubIcon from "~icons/fa-brands/github";
 
+	import Fish from "$lib/items/Fish/Fish.svelte";
+
 	let { data, children } = $props();
 
 	let siteName = "thnee.se";
@@ -77,33 +79,45 @@
 
 	<footer class="
 		min-w-0
-		p-4 px-12 mt-10
+		mt-10
 		bg-neutral-900
 		border-t-1 border-neutral-800
 		select-none
 	">
 		 <div class="
 			w-full max-w-[1200px] mx-auto
-			flex justify-center
+			flex flex-col sm:flex-row
+			items-center justify-between gap-1 p-4
 		">
-			<a
-				href="https://github.com/thnee/blotter"
-				class="
-				text-white no-underline
-					p-1.5 px-2.5 rounded-sm hover:bg-neutral-700/15
-					flex items-center gap-2.5
-				"
-			>
-				<GithubIcon />
-				<div class="
-					flex gap-1.5
-					text-sm text-white/80
-				">
-					<span>thnee</span>
-					<span class="text-white/30 ">/</span>
-					<span class="font-semibold">blotter</span>
-				</div>
-			</a>
+			<div class="w-16 order-1 sm:order-0 flex justify-center px-2">
+				<Fish />
+			</div>
+
+			<div class="order-0 sm:order-1">
+				<a
+					href="https://github.com/thnee/blotter"
+					class="
+						px-3 py-2
+						flex items-center gap-2.5
+						no-underline
+						text-white
+						rounded-sm hover:bg-neutral-700/15
+					"
+				>
+					<GithubIcon />
+					<div class="
+						flex gap-1.5
+						text-sm text-white/80
+					">
+						<span>thnee</span>
+						<span class="text-white/30 ">/</span>
+						<span class="font-semibold">blotter</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="w-16 order-2 sm:order-2 flex justify-center px-2">
+			</div>
 		</div>
 	</footer>
 </div>
