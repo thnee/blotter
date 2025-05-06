@@ -12,8 +12,10 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
+		"@iconify-json/carbon": "^1.2.8",
 		"@iconify-json/fa-brands": "^1.2.1",
 		"@iconify-json/logos": "^1.2.4",
+		"@iconify-json/lucide": "^1.2.40",
 		"@iconify-json/mdi": "^1.2.3",
 		"@iconify-json/noto": "^1.2.3",
 		"@sveltejs/adapter-static": "^3.0.8",
